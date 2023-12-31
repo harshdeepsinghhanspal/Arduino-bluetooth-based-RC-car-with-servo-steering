@@ -56,10 +56,10 @@ void setup()
   pinMode(in4, OUTPUT);
 
   // Turn off motors - Initial state
-	digitalWrite(in1, LOW);
-	digitalWrite(in2, LOW);
-	digitalWrite(in3, LOW);
-	digitalWrite(in4, LOW);
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
   
   myServo1.attach(9);
   myServo2.attach(10);
