@@ -155,8 +155,11 @@ void forward()
   motor2.run(FORWARD);
 
   //Motor driver module
+  //Motor driver module
   analogWrite(in1, Speed);
+  analogWrite(in2, 0);
   analogWrite(in3, Speed);
+  analogWrite(in4, 0);
 }
 
 void backward()
@@ -165,7 +168,9 @@ void backward()
   motor2.run(BACKWARD);
 
   //Motor driver module
+  analogWrite(in1, 0);
   analogWrite(in2, Speed);
+  analogWrite(in3, 0);
   analogWrite(in4, Speed);
 }
 
@@ -173,9 +178,25 @@ void backward()
 //Steering movement
 void left(){
   myServo1.write(angle-angleStep);
+  motor1.run(FORWARD);
+  motor2.run(BACKWARD);
+  
+  //Motor driver module
+  analogWrite(in1, Speed);
+  analogWrite(in2, 0);
+  analogWrite(in3, 0);
+  analogWrite(in4, 0);
 }
 void right(){
   myServo1.write(angle+angleStep);
+  motor1.run(BACKWARD);
+  motor2.run(FORWARD);
+
+  //Motor driver module
+  analogWrite(in1, 0);
+  analogWrite(in2, 0);
+  analogWrite(in3, Speed);
+  analogWrite(in4, 0);
 }
 
 
